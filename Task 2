@@ -1,0 +1,53 @@
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+    int choice;
+    float celsius,fahrenheit,kelvin;
+    while(1)
+    {
+        printf("\n= = = = = = = Temperature converter = = = = = = =\n");
+        printf("1.Celsius to Fahrenheit \t 2.Celsius to Kelvin\n");
+        printf("3.Fahrenheit to Celsius \t 4.Fahrenheit to Kelvin\n");
+        printf("5.Kelvin to Celsius \t     6.Kelvin to Fahrenheit\n");
+        printf("Choose your temperature converter:");
+        scanf("%d",&choice);
+        switch(choice)
+        {
+            case 1: printf("Enter temperature in celsius:");
+                    scanf("%f",&celsius);
+                    fahrenheit=celsius*9/5+32;
+                    printf("Temperature in Fahrenheit:%.2f\n",fahrenheit);
+                    break;
+            case 2: printf("Enter temperature in celsius:");
+                    scanf("%f",&celsius);
+                    kelvin=celsius+273.15;
+                    printf("Temperature in kelvin:%.2f\n",kelvin);
+                    break;
+            case 3: printf("Enter temperature in fahrenheit:");
+                    scanf("%f",&fahrenheit);
+                    celsius=(fahrenheit-32)*5/9;
+                    printf("Temperature in Celsius:%.2f\n",celsius);
+                    break;
+            case 4:printf("Enter temperature in fahrenheit:");
+                   scanf("%f",&fahrenheit);
+                   kelvin=(fahrenheit-32)*5/9+273.15;
+                   printf("Temperature in kelvin:%.2f\n",kelvin);
+                   break;
+            case 5:printf("Enter temperature in kelvin:");
+                   scanf("%f",&kelvin);
+                   celsius=kelvin-273.15;
+                   printf("Temperature in celsius:%.2f\n",celsius);
+                   break;
+            case 6:printf("Enter temperature in kelvin:");
+                   scanf("%f",&kelvin);
+                   fahrenheit=(kelvin-273.15)*9/5+32;
+                   printf("Temperature in fahrenheit:%.2f\n",fahrenheit);
+                   break;
+            case 7:exit(0);
+            default:printf("Invalid converter!!");
+        }
+    }
+    return 0;
+
+}
